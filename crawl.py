@@ -36,7 +36,7 @@ def crawl_youtube(id, password):
 
     # 비밀번호 입력 필드가 나타날 때까지 대기
     password_input = wait.until(EC.presence_of_element_located((By.NAME, "Passwd")))
-    password_input.send_keys("tnrhks12!@")
+    password_input.send_keys(password)
 
     # 로그인 버튼 클릭
     login_button = wait.until(EC.element_to_be_clickable((By.ID, "passwordNext")))
