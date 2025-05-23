@@ -4,16 +4,17 @@ from data_sum import collect_table_data
 from upload_db import upload_csv_to_db
 import time
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+base_path = os.getenv("BASE_PATH")
+
+id = os.getenv("YOUTUBE_ID")
+password = os.getenv("YOUTUBE_PASSWORD")
 
 def main():
-    # 기본 경로 설정
-    base_path = "/Users/isugwan/Downloads"
-
-    # 크롤링 할 유튜브 아이디와 비밀번호 입력
-    id = "austinlee.devv@gmail.com"
-    password = "tnrhks12!@"
-    
-    # 크롤링 재시도 로직
+    # 크롤링 재시도 횟수
     max_retries = 3
     retry_count = 0
     
