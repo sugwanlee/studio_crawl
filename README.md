@@ -2,21 +2,22 @@
 
 ## 기본 설정
 
-### 1. 메인 설정 (main.py)
-- 기본 다운로드 경로: `/Users/isugwan/Downloads`
-- YouTube 계정 정보 설정:
-  ```python
-  crawl_youtube("이메일", "비밀번호")
-  ```
+### 1. 환경 변수 설정 (.env)
+프로젝트 루트 디렉토리에 `.env` 파일을 생성하고 다음 내용을 입력하세요:
+```env
+# 다운로드 경로
+BASE_PATH=/Users/your_name/Downloads
 
-### 2. DB 설정 (upload_db.py)
-- PostgreSQL 연결 정보:
-  ```python
-  host="localhost"
-  database='studio_db'
-  user="postgres"
-  password='0000'
-  ```
+# YouTube 계정 정보
+YOUTUBE_ID=your_email@gmail.com
+YOUTUBE_PASSWORD=your_password
+
+# PostgreSQL DB 정보
+DB_HOST=your_db_host
+DB_NAME=your_db_name
+DB_USER=your_db_user
+DB_PASSWORD=your_db_password
+```
 
 ## 실행 방법
 ```bash

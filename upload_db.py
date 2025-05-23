@@ -29,10 +29,10 @@ def upload_csv_to_db(csv_folder_path):
     try:
         # PostgreSQL 연결
         conn = psycopg2.connect(
-            host="localhost",
-            database='studio_db',
-            user="postgres",
-            password='0000'
+            host=os.getenv("DB_HOST"),
+            database=os.getenv("DB_NAME"),
+            user=os.getenv("DB_USER"),
+            password=os.getenv("DB_PASSWORD")
         )
         cursor = conn.cursor()
 
